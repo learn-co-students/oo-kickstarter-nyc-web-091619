@@ -14,8 +14,12 @@ class Backer
     # Once both classes have their attributes and readers set up, write a method on the Backer class called back_project() that takes in a Project instance and adds the project to its @backed_projects attribute.
 
     def back_project(project)
+        # if !backed_projects.include?(project)
+        #     backer.back_project(self)
+        # end
         @backed_projects << project
         project.add_backer(self)
+
     end
 
     # def back_project(project)

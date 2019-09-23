@@ -1,3 +1,4 @@
+require 'pry'
 class Project
 
     attr_reader :title, :backers
@@ -12,7 +13,15 @@ class Project
     # Accepts a Backer as an argument and stores it in a backers array
 
     def add_backer(backer)
-        @backers << backer
+        # if !backers.include?(backer)
+        #     backer.back_project(self)
+        # end
+       @backers << backer
+       if backer.backed_projects.include?self
+        return
+       else
+        backer.backed_projects << self
+       end
     end
 
     
